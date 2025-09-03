@@ -21,7 +21,7 @@ class Student extends BaseController{
             'course' => $this->request->getPost('course'),
         ];
         $model->insert($data);
-    return redirect()->to('/Student');
+    return redirect()->to(base_url('student'));
     }
     public function edit($id){
         $model = new StudentModel();
@@ -37,13 +37,13 @@ class Student extends BaseController{
             'course' => $this->request->getPost('course'),
         ];
         $model->update($id, $data);
-    return redirect()->to('/Student');
+    return redirect()->to(base_url('student'));
     }
 
     public function delete($id){
         $model = new StudentModel();
         $model->delete($id);
-    return redirect()->to('/Student');
+    return redirect()->to(base_url('student'));
     }
     
 

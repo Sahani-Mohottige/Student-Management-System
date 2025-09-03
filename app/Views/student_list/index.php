@@ -7,9 +7,11 @@
     <title>Student List</title>
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body>
-<div class="container mt-5">
+<body class="bg-dark">
+<div class="container mt-5 bg-light p-4 rounded">
     <h1 class="mb-4">Student List</h1>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
@@ -31,14 +33,20 @@
                 <td><?= esc($student['age']) ?></td>
                 <td><?= esc($student['course']) ?></td>
                 <td>
-                    <a href="/Student/edit/<?= esc($student['id']) ?>" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="/Student/delete/<?= esc($student['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                    <a href="/student/edit/<?= esc($student['id']) ?>" class="btn btn-md btn-primary me-2">
+                        <i class="bi bi-pencil-square"></i> Edit
+                    </a>
+                    <a href="/student/delete/<?= esc($student['id']) ?>" class="btn btn-md btn-danger" onclick="return confirm('Are you sure you want to delete this student?');">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
-    <a href="/Student/create" class="btn btn-success">Add New Student</a>
+    <a href="/student/create" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Add New Student
+    </a>
 </div>
 </body>
 </html>
